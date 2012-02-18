@@ -22,6 +22,11 @@
             android:name=".EditActivity"
             android:label="@string/profile_edit" >
         </activity>
+
+        <provider
+            android:name="com.devcamp.provider.ProfileProvider"
+            android:authorities="com.devcamp.provider.profiles" >
+        </provider>
     </application>
 
 </manifest>
