@@ -1,9 +1,11 @@
 package com.devcamp.provider;
 
+import com.devcamp.ProfileService;
 import com.devcamp.provider.ProfileContract.Profile;
 import com.devcamp.provider.ProfileDatabase.Tables;
 
 import android.content.ContentProvider;
+import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.UriMatcher;
@@ -85,6 +87,11 @@ public class ProfileProvider extends ContentProvider {
     case PROFILES:
       return db.query(Tables.PROFILES, projection, selection, selectionArgs, null, null,
           sortOrder);
+
+    case PROFILES_ID:
+      long id = ContentUris.parseId(uri);
+      return db.query(Tables.PROFILES, projection, Profile._ID + "=",
+          new String[] { String.valueOf(id) }, null, null, sortOrder);
 
     default:
       break;
