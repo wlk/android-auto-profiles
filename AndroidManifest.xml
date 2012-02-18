@@ -18,16 +18,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".EditActivity"
-            android:label="@string/profile_edit" >
-         	<intent-filter>
-                <action android:name="android.intent.action.EDIT" />
-                
-                <data android:mimeType="vnd.android.cursor.item/vnd.devcamp.profile" />
-            </intent-filter>
+            android:name=".EditActivity" >
             <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
                 <action android:name="android.intent.action.INSERT" />
                 <data android:mimeType="vnd.android.cursor.dir/vnd.devcamp.profile" />
+            </intent-filter>
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.intent.action.EDIT" />
+                <data android:mimeType="vnd.android.cursor.item/vnd.devcamp.profile" />
             </intent-filter>
         </activity>
 
