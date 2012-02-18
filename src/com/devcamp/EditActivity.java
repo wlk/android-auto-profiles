@@ -6,6 +6,7 @@ import com.devcamp.provider.ProfileContract.Profile;
 
 import android.app.Activity;
 import android.app.AlarmManager;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -99,7 +100,8 @@ public class EditActivity extends Activity implements OnClickListener {
         values.put(Profile.RADIUS, radius.getText().toString());
         values.put(Profile.MODE, mode.getSelectedItemPosition());
 
-        ProfileProvider provider = new ProfileProvider();
+        //ProfileProvider provider = new ProfileProvider();
+        ContentResolver provider = getContentResolver();
 
         if(i.getAction().equals(Intent.ACTION_INSERT)){
             provider.insert(u, values);
