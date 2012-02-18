@@ -3,5 +3,6 @@
 
     <string name="hello">Hello World, SettingsActivity!</string>
     <string name="app_name">Android-auto-profiles</string>
+    <string name="profile_1">silent night</string>
 
 </resources>
