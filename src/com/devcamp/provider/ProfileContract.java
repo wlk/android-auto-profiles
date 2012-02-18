@@ -21,6 +21,8 @@ public class ProfileContract {
     String RADIUS = "radius";
     String MODE = "mode";
     String PRIORITY = "priority";
+    String IS_IN_LOCATION = "is_in_location";
+    String IS_IN_TIME = "is_in_time";
   }
 
   public static class Profile implements ProfileColumns, BaseColumns {
