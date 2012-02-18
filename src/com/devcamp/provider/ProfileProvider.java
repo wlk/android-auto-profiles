@@ -24,7 +24,7 @@ public class ProfileProvider extends ContentProvider {
   @Override
   public boolean onCreate() {
     mDatabase = new ProfileDatabase(getContext());
-    return false;
+    return true;
   }
 
   private static UriMatcher buildUriMatcher() {
