@@ -23,6 +23,7 @@ import com.devcamp.provider.ProfileProvider;
 
 public class EditActivity extends Activity implements OnClickListener {
 	EditText start_time;
+	EditText name;
 	EditText end_time;
 	EditText radius;
 	Spinner mode; // aby pobrać użyj getPosition lub coś podobnego
@@ -39,7 +40,8 @@ public class EditActivity extends Activity implements OnClickListener {
 		setContentView(R.layout.edit_layout);
 
 		Intent i = getIntent();
-
+		
+		name = (EditText) findViewById(R.id.name);
 		start_time = (EditText) findViewById(R.id.start_time);
 		end_time = (EditText) findViewById(R.id.end_time);
 		radius = (EditText) findViewById(R.id.radius);
@@ -56,6 +58,7 @@ public class EditActivity extends Activity implements OnClickListener {
 			Uri u = i.getData();
 			c = managedQuery(u, null, null, null, null);
 			c.moveToFirst();
+			name.setText(c.getString(c.getColumnIndex(Profile.NAME)));
 			start_time.setText(c.getString(c.getColumnIndex(Profile.START)));
 			end_time.setText(c.getString(c.getColumnIndex(Profile.STOP)));
 			latitude.setText(c.getString(c.getColumnIndex(Profile.LATITUDE)));
@@ -92,7 +95,7 @@ public class EditActivity extends Activity implements OnClickListener {
 
         ContentValues values = new ContentValues();
         
-        
+        values.put(Profile.NAME, name.getText().toString());
         values.put(Profile.START, start_time.getText().toString());
         values.put(Profile.STOP, end_time.getText().toString());
         values.put(Profile.LATITUDE, latitude.getText().toString());
