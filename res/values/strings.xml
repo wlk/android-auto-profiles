@@ -15,5 +15,7 @@
         <item >VIBRATE</item>
         <item >NORMAL</item>
     </string-array>
+    <string name="profile_edit">Edycja profilu</string>
+    <string name="save">zapisz</string>
 
 </resources>
