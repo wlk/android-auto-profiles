@@ -48,13 +48,13 @@ public class SettingsActivity extends ListActivity implements OnClickListener {
 				i.setAction(Intent.ACTION_EDIT);
 				startActivity(i);
 			}
-
 		});
 	}
 
 	public void onClick(View v) {
 		Intent i = new Intent();
-		i.setData(Profile.CONTENT_URI);
+//		i.setData(Profile.CONTENT_URI);
+		i.setType(Profile.CONTENT_TYPE);
 		i.setAction(Intent.ACTION_INSERT);
 		startActivity(i);
 		

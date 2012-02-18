@@ -35,7 +35,8 @@ public class ProfileDatabase extends SQLiteOpenHelper{
         + Profile.LONGITUDE + " INTEGER, "
         + Profile.LATITUDE + " INTEGER, "
         + Profile.RADIUS + " INTEGER, "
-        + Profile.MODE + "ITNEGER "
+        + Profile.PRIORITY + " INTEGER, "
+        + Profile.MODE + " INTEGER "
         + ")"
         );
     
