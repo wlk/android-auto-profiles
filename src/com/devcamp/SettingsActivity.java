@@ -4,29 +4,30 @@ import android.app.Activity;
 import android.app.ListActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.widget.*;
 
 public class SettingsActivity extends ListActivity {
 
 	static final String[] test = new String[] { "silent", "test", "costam",
 			"dupa" };
 
+    private Button addProfileButton;
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 
-		setListAdapter(new ArrayAdapter<String>(this, R.layout.list_item, test));
+        View footer = getLayoutInflater().inflate(R.layout.list_footer, null);
 
-		ListView lv = getListView();
-		lv.setTextFilterEnabled(true);
+        ListView lv = getListView();
+        lv.setTextFilterEnabled(true);
 
-		lv.setOnItemClickListener(new OnItemClickListener() {
+        lv.addFooterView(footer);
+
+        setListAdapter(new ArrayAdapter<String>(this, R.layout.list_item, test));
+
+        lv.setOnItemClickListener(new OnItemClickListener() {
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
 				

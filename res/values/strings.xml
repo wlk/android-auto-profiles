@@ -8,6 +8,8 @@
     <string name="radius">promień</string>
     <string name="mode">tryb</string>
     <string name="priority">priorytet</string>
+    <string name="add_profile">dodaj profil</string>
+
     <string-array name="priorities">
         <item >SILENT</item>
         <item >VIBRATE</item>
