@@ -48,7 +48,6 @@ public class SettingsActivity extends ListActivity implements OnClickListener {
 				i.setAction(Intent.ACTION_EDIT);
 				startActivity(i);
 			}
-
 		});
 	}
 
