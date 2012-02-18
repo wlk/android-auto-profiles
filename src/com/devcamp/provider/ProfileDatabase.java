@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class ProfileDatabase extends SQLiteOpenHelper{
 
   private static final String DB_NAME = "profiles.db";
-  private static final int CURRENT_VERSION = 1;
+  private static final int CURRENT_VERSION = 2;
 
   public ProfileDatabase(Context context) {
     super(context, DB_NAME, null, CURRENT_VERSION);
@@ -36,7 +36,9 @@ public class ProfileDatabase extends SQLiteOpenHelper{
         + Profile.LATITUDE + " INTEGER, "
         + Profile.RADIUS + " INTEGER, "
         + Profile.PRIORITY + " INTEGER, "
-        + Profile.MODE + " INTEGER "
+        + Profile.MODE + " INTEGER, "
+        + Profile.IS_IN_LOCATION + " INTEGER DEFAULT 1, "
+        + Profile.IS_IN_TIME + " INTEGER DEFAULT 1"
         + ")"
         );
     
