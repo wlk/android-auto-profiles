@@ -22,6 +22,7 @@
             android:label="@string/profile_edit" >
          	<intent-filter>
                 <action android:name="android.intent.action.EDIT" />
+                
                 <data android:mimeType="vnd.android.cursor.item/vnd.devcamp.profile" />
             </intent-filter>
             <intent-filter>

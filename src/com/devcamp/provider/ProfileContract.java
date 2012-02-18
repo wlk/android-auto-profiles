@@ -20,6 +20,7 @@ public class ProfileContract {
     String LATITUDE = "latitude";
     String RADIUS = "radius";
     String MODE = "mode";
+    String PRIORITY = "priority";
   }
 
   public static class Profile implements ProfileColumns, BaseColumns {

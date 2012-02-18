@@ -10,6 +10,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.net.Uri;
+import android.util.Log;
 
 public class ProfileProvider extends ContentProvider {
 
@@ -17,9 +18,9 @@ public class ProfileProvider extends ContentProvider {
 
   private static final UriMatcher sUriMatcher = buildUriMatcher();
 
-  private static final int PROFILES = 0;
+  private static final int PROFILES = 1;
 
-  private static final int PROFILES_ID = 1;
+  private static final int PROFILES_ID = 2;
 
   @Override
   public boolean onCreate() {
@@ -43,7 +44,8 @@ public class ProfileProvider extends ContentProvider {
 
   @Override
   public String getType(Uri uri) {
-    switch (sUriMatcher.match(uri)) {
+    int match = sUriMatcher.match(uri);
+    switch (match) {
     case PROFILES:
       return Profile.CONTENT_TYPE;
 
