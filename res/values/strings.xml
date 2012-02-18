@@ -20,5 +20,6 @@
     
     <string name="profile_edit">Edycja profilu</string>
     <string name="save">zapisz</string>
+    <string name="name">nazwa</string>
 
 </resources>
