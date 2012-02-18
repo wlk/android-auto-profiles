@@ -22,6 +22,10 @@ import com.devcamp.provider.ProfileContract;
 public class ProfileService extends IntentService {
     private AudioManager amanager;
 
+    public ProfileService(String name) {
+        super(name);
+    }
+
     public IBinder onBind(Intent intent) {
         return null;
     }
