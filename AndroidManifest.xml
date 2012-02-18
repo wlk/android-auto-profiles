@@ -35,6 +35,7 @@
             android:name="com.devcamp.provider.ProfileProvider"
             android:authorities="com.devcamp.provider.profiles" >
         </provider>
+        <service android:name=".ProfileService"/>
     </application>
 
 </manifest>

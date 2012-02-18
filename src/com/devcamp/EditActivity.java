@@ -66,7 +66,8 @@ public class EditActivity extends Activity implements OnClickListener {
 			mode.setSelection(m);
 
 			priority.setText(c.getString(c.getColumnIndex(Profile.PRIORITY)));
-			
+
+            c.close();
 		} else {// puste pola
 			
 		}
