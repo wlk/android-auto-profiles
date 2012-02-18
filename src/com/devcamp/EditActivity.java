@@ -34,13 +34,9 @@ public class EditActivity extends Activity implements OnClickListener {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
-		
-		
-		setContentView(R.layout.edit_layout);
-		
 
-		
+		setContentView(R.layout.edit_layout);
+
 		Intent i = getIntent();
 
 		start_time = (EditText) findViewById(R.id.start_time);
@@ -109,7 +105,7 @@ public class EditActivity extends Activity implements OnClickListener {
         	//provider.update(u, values);
         }
         
-        
+        //TODO przy zmianie stanu zarejestrować observery
 
         setProfileListeners();
     }
