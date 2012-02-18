@@ -2,12 +2,14 @@ package com.devcamp;
 
 import android.app.IntentService;
 import android.app.Service;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.media.AudioManager;
 import android.net.Uri;
 import android.os.IBinder;
+import com.devcamp.provider.ProfileContract;
 
 
 /**
@@ -27,8 +29,17 @@ public class ProfileService extends IntentService {
     @Override
     protected void onHandleIntent(Intent intent) {
         Uri u = intent.getData();
-        Cursor c = managedQuery(u, null, null, null, null);
+
+        ContentResolver provider = getContentResolver();
+
+        String[] proj = {
+                ProfileContract.Profile.IS_IN_LOCATION,
+                ProfileContract.Profile.IS_IN_TIME
+        };
+
+        Cursor c = provider.query(u, proj, null, null, null);
         c.moveToFirst();
+        c.getString(c.getColumnIndex(ProfileContract.Profile.START));
     }
 
 
