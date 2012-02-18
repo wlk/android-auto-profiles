@@ -27,7 +27,7 @@ public class SettingsActivity extends ListActivity {
 
         setListAdapter(new ArrayAdapter<String>(this, R.layout.list_item, test));
 
-        lv.setOnItemClickListener(new OnItemClickListener() {
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
 				
