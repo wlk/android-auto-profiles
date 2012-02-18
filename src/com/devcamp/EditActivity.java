@@ -29,7 +29,7 @@ public class EditActivity extends Activity implements OnClickListener {
 	EditText latitude;
 	EditText longtitude;
 	
-	
+	Cursor c;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -53,7 +53,7 @@ public class EditActivity extends Activity implements OnClickListener {
 
 		if (i.getAction().equals(Intent.ACTION_EDIT)) { // wypełnij pola
 			Uri u = i.getData();
-			Cursor c = managedQuery(u, null, null, null, null);
+			c = managedQuery(u, null, null, null, null);
 			c.moveToFirst();
 			start_time.setText(c.getString(c.getColumnIndex(Profile.START)));
 			end_time.setText(c.getString(c.getColumnIndex(Profile.STOP)));
@@ -65,9 +65,10 @@ public class EditActivity extends Activity implements OnClickListener {
 			Integer m = Integer.valueOf(modeString);
 			mode.setSelection(m);
 
-			// priority.setText(c.getString(c.getColumnIndex(Profile.PRIORITY)));
+			priority.setText(c.getString(c.getColumnIndex(Profile.PRIORITY)));
+			
 		} else {// puste pola
-
+			
 		}
 
 		final Button b = (Button) findViewById(R.id.save_profile_button);
@@ -89,6 +90,7 @@ public class EditActivity extends Activity implements OnClickListener {
 
         ContentValues values = new ContentValues();
         
+        
         values.put(Profile.START, start_time.getText().toString());
         values.put(Profile.STOP, end_time.getText().toString());
         values.put(Profile.LATITUDE, latitude.getText().toString());
@@ -102,7 +104,7 @@ public class EditActivity extends Activity implements OnClickListener {
             provider.insert(u, values);
         } 
         if(i.getAction().equals(Intent.ACTION_EDIT)){
-        	//provider.update(u, values);
+        	provider.update(u, values, null, null); //TODO czy tu ma być null, null ?
         }
         
         //TODO przy zmianie stanu zarejestrować observery
