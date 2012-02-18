@@ -85,9 +85,7 @@ public class EditActivity extends Activity implements OnClickListener {
 		finish();
 	}
 
-	public void setProfileListeners() {
 
-	}
 
 	public void saveProfile() {
         Intent i = getIntent();
@@ -110,22 +108,23 @@ public class EditActivity extends Activity implements OnClickListener {
             provider.insert(u, values);
         } 
         if(i.getAction().equals(Intent.ACTION_EDIT)){
-        	provider.update(u, values, null, null); //TODO czy tu ma być null, null ?
+        	provider.update(u, values, null, null);
         }
         
         //TODO przy zmianie stanu zarejestrować observery
 
-        setProfileListeners();
+        registerLocationObserver(Double.valueOf(longtitude.getText().toString()), Double.valueOf(latitude.getText().toString()), Integer.valueOf(radius.getText().toString()));
+        registerTimeObserver(start_time.getText().toString(), end_time.getText().toString());
     }
 
-//	private void registerLocationObserver(double longitude, double latitude, int r) {
+	private void registerLocationObserver(double longitude, double latitude, int r) {
 //		LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 //		locationManager.addProximityAlert(latitude, longitude, r, -1, proximityIntent);
 //		IntentFilter filter = new IntentFilter(PROX_ALERT_INTENT);
 //		registerReceiver(new ProximityIntentReceiver(), filter);
-//	}
+	}
 //
-//	private void registerTimeObserver(String start_time, String end_time) {
+	private void registerTimeObserver(String start_time, String end_time) {
 //		Intent myIntent = new Intent(AndroidAlarmService.this, MyAlarmService.class);
 //		pendingIntent = PendingIntent.getService(AndroidAlarmService.this, 0, myIntent, 0);
 //
@@ -135,6 +134,6 @@ public class EditActivity extends Activity implements OnClickListener {
 //		calendar.setTimeInMillis(System.currentTimeMillis());
 //		calendar.add(Calendar.SECOND, 10);
 //		alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), 5 * 1000, pendingIntent);
-//	}
+	}
 
 }
