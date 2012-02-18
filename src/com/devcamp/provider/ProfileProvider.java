@@ -90,7 +90,7 @@ public class ProfileProvider extends ContentProvider {
 
     case PROFILES_ID:
       long id = ContentUris.parseId(uri);
-      return db.query(Tables.PROFILES, projection, Profile._ID + "=",
+      return db.query(Tables.PROFILES, projection, Profile._ID + "=?",
           new String[] { String.valueOf(id) }, null, null, sortOrder);
 
     default:
