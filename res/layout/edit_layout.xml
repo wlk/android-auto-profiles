@@ -32,6 +32,20 @@
                 android:inputType="time" />
 
             <EditText
+                android:id="@+id/latitude"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/latitude"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/longtitude"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/longtitude"
+                android:inputType="number" />
+
+            <EditText
                 android:id="@+id/radius"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

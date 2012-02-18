@@ -9,6 +9,8 @@
     <string name="mode">tryb</string>
     <string name="priority">priorytet</string>
     <string name="add_profile">dodaj profil</string>
+    <string name="longtitude">długość</string>
+    <string name="latitude">szerokość</string>
 
     <string-array name="priorities">
         <item >SILENT</item>
