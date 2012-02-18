@@ -8,5 +8,10 @@
     <string name="radius">promień</string>
     <string name="mode">tryb</string>
     <string name="priority">priorytet</string>
+    <string-array name="priorities">
+        <item >SILENT</item>
+        <item >VIBRATE</item>
+        <item >NORMAL</item>
+    </string-array>
 
 </resources>
