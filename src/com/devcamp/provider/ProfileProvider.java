@@ -102,7 +102,15 @@ public class ProfileProvider extends ContentProvider {
   @Override
   public int update(Uri uri, ContentValues values, String selection,
       String[] selectionArgs) {
-    return 0;
-  }
 
+    switch (sUriMatcher.match(uri)) {
+    case PROFILES_ID:
+      long id = ContentUris.parseId(uri);
+      return db.update(Tables.PROFILES, values, Profile._ID + "=?",
+          new String[] { String.valueOf(id) });
+
+    }
+    return 0;
+
+  }
 }
