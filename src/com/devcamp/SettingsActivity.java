@@ -2,6 +2,7 @@ package com.devcamp;
 
 import android.app.Activity;
 import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -29,6 +30,8 @@ public class SettingsActivity extends ListActivity {
 		lv.setOnItemClickListener(new OnItemClickListener() {
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
+				Intent i = new Intent(getApplicationContext(), EditActivity.class);
+				i.putExtra("profile_index", 1);
 				
 //				Toast.makeText(getApplicationContext(),
 //						((TextView) view).getText(), Toast.LENGTH_SHORT).show();
