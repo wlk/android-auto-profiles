@@ -12,8 +12,6 @@ public class SettingsActivity extends ListActivity {
 	static final String[] test = new String[] { "silent", "test", "costam",
 			"dupa" };
 
-    private Button addProfileButton;
-
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
