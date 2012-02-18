@@ -5,15 +5,16 @@ import com.devcamp.provider.ProfileContract.Profile;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 public class ProfileDatabase extends SQLiteOpenHelper{
 
   private static final String DB_NAME = "profiles.db";
-  private static final int CURRENT_VERSION = 2;
+  private static final int CURRENT_VERSION = 1;
 
   public ProfileDatabase(Context context) {
     super(context, DB_NAME, null, CURRENT_VERSION);
-
+    Log.d("xxx", "create");
   }
   
   @Override
@@ -46,7 +47,7 @@ public class ProfileDatabase extends SQLiteOpenHelper{
 
   @Override
   public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-    // TODO Auto-generated method stub
+    Log.d("xxx", "upgrade");
     
   }
   

@@ -5,6 +5,7 @@ import com.devcamp.provider.ProfileDatabase.Tables;
 
 import android.content.ContentProvider;
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.UriMatcher;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -21,10 +22,14 @@ public class ProfileProvider extends ContentProvider {
 
   private static final int PROFILES_ID = 2;
 
+  private SQLiteDatabase db;
+
   @Override
   public boolean onCreate() {
-    mDatabase = new ProfileDatabase(getContext());
-    return false;
+    final Context context = getContext();
+    mDatabase = new ProfileDatabase(context);
+    db = mDatabase.getWritableDatabase();
+    return true;
   }
 
   private static UriMatcher buildUriMatcher() {
@@ -57,7 +62,6 @@ public class ProfileProvider extends ContentProvider {
 
   @Override
   public Uri insert(Uri uri, ContentValues values) {
-    SQLiteDatabase db = mDatabase.getWritableDatabase();
 
     switch (sUriMatcher.match(uri)) {
     case PROFILES:
