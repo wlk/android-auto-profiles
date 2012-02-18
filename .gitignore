@@ -2,3 +2,4 @@ bin/
 gen/
 .idea/
 Android-auto-profiles.iml
+out/
