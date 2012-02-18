@@ -1,0 +1,43 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linearLayout1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/start_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="time" 
+        android:hint="@string/start_time" >
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/end_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="time"
+        android:hint="@string/end_time" />
+
+    <EditText
+        android:id="@+id/radius"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="@string/radius" />
+
+    <Spinner
+        android:id="@+id/mode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/mode" />
+
+    <EditText
+        android:id="@+id/priority"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="@string/priority" />
+
+</LinearLayout>

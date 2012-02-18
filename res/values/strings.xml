@@ -2,7 +2,11 @@
 <resources>
 
     <string name="hello">Hello World, SettingsActivity!</string>
-    <string name="app_name">Android-auto-profiles</string>
-    <string name="profile_1">silent night</string>
+    <string name="app_name">Android Auto Profiles</string>
+    <string name="start_time">czas startu</string>
+    <string name="end_time">czas zakończenia</string>
+    <string name="radius">promień</string>
+    <string name="mode">tryb</string>
+    <string name="priority">priorytet</string>
 
 </resources>
